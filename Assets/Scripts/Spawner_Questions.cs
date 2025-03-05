@@ -26,10 +26,15 @@ public class Spawner_Questions : MonoBehaviour
 
     private List<GameObject> activePortals = new List<GameObject>();
     private List<Questions> questionsList;
-    private SQLite_DB_Manager dbManager;
+    private Questions_DB_Manager dbManager;
 
     private void Start()
     {
+        if (portals.Length > 0)
+        {
+            GameObject tempPortal = Instantiate(portals[0].prefab);
+            Destroy(tempPortal);
+        }
         string subject = GameParamManager.subject;
         string difficulty = GameParamManager.difficulty;
         spawnCD = Time.time + Random.Range(4f, 7f);
@@ -38,7 +43,7 @@ public class Spawner_Questions : MonoBehaviour
         isChoicesOnScreen = false;
 
         controlPanelText.text = "";
-        dbManager = FindObjectOfType<SQLite_DB_Manager>();
+        dbManager = FindObjectOfType<Questions_DB_Manager>();
         dbManager.GetQuestions(subject, difficulty, (questions) =>
         {
             questionsList = questions;
@@ -50,12 +55,6 @@ public class Spawner_Questions : MonoBehaviour
     {
         CancelInvoke();
     }
-
-    private void OnEnable()
-    {
-
-    }
-
     public void Spawn()
     {
         if (questionsList != null)
@@ -70,12 +69,17 @@ public class Spawner_Questions : MonoBehaviour
             correctAnswer = questionsList[randomQuestionIndex].Correct_Answer;
             //Debug.Log($"Q: {questionsList[randomQuestionIndex].Question}");
             Debug.Log($"Answer: {questionsList[randomQuestionIndex].Correct_Answer}");
+            float i = (portals.Length - 1) * 0.7f;
+
+            //portals = portals.OrderBy(p => Random.value).ToArray();
+
             foreach (Portal_Object portal in portals)
             {
                 GameObject spawn = Instantiate(portal.prefab);
                 Vector3 newPos = spawn.transform.position;
-                newPos.x = transform.position.x;
+                newPos.x = transform.position.x + i;
                 spawn.transform.position = newPos;
+
 
                 var portalScript = spawn.GetComponent<Portal>();
                 if (portalScript != null)
@@ -85,9 +89,6 @@ public class Spawner_Questions : MonoBehaviour
 
                 string choice = "";
 
-                //Debug.Log(questionsList[randomQuestionIndex].Choice_A);
-                //Debug.Log(questionsList[randomQuestionIndex].Choice_B);
-                //Debug.Log(questionsList[randomQuestionIndex].Choice_C);
                 switch (portalScript.letterChoice)
                 {
                     case "A":
@@ -101,10 +102,10 @@ public class Spawner_Questions : MonoBehaviour
                         break;
                 }
 
-                //Debug.Log(choice);
                 spawn.GetComponentInChildren<TMP_Text>().text = choice;
                 
                 activePortals.Add(spawn);
+                i -= 0.7f;
             }
             GameObject spawnListener = Instantiate(listener);
             Vector3 listenerPos = spawnListener.transform.position;
@@ -135,7 +136,7 @@ public class Spawner_Questions : MonoBehaviour
         if(correctAnswer == answer)
         {
             Debug.Log("CORRECT");
-            GameManager.Instance.score++;
+            GameManager.Instance.score += GameManager.Instance.isPowerUp2x ? 2 : 1;
             controlPanelText.text = "Correct! Oxygen Replenished..."; 
             if(GameManager.Instance.oxygenLevel < 80)
             {
@@ -149,13 +150,26 @@ public class Spawner_Questions : MonoBehaviour
         {
             TriggerDamage();
             controlPanelText.text = "Warning! Oxygen Leak!";
-            if (GameManager.Instance.oxygenLevel > 20)
+            if (GameManager.Instance.isPowerUpStrongLungs)
             {
-                GameManager.Instance.oxygenLevel -= 20;
-            }
-            else
+                if (GameManager.Instance.oxygenLevel > 10)
+                {
+                    GameManager.Instance.oxygenLevel -= 10;
+                }
+                else
+                {
+                    GameManager.Instance.oxygenLevel = 0;
+                }
+            } else
             {
-                GameManager.Instance.oxygenLevel = 0;
+                if (GameManager.Instance.oxygenLevel > 20)
+                {
+                    GameManager.Instance.oxygenLevel -= 20;
+                }
+                else
+                {
+                    GameManager.Instance.oxygenLevel = 0;
+                }
             }
             Debug.Log("WRONG");
         }

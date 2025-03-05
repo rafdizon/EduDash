@@ -10,7 +10,7 @@ public class Choices : MonoBehaviour
     }
     private void Update()
     {
-        transform.position += GameManager.Instance.gameSpeed * Time.deltaTime * Vector3.left;
+        transform.position += (GameManager.Instance.gameSpeed * 0.5f) * Time.deltaTime * Vector3.left;
 
         if (transform.position.x < leftEdge)
         {

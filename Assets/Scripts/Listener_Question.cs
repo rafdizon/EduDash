@@ -17,7 +17,7 @@ public class Listener_Question : MonoBehaviour
     }
     private void Update()
     {
-        transform.position += GameManager.Instance.gameSpeed * Time.deltaTime * Vector3.left;
+        transform.position += (GameManager.Instance.gameSpeed * 0.8f) * Time.deltaTime * Vector3.left;
 
         if (transform.position.x < leftEdge)
         {

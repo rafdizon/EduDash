@@ -3,36 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Library\\PackageCache\\com.unity.burst@1.8.17\\Editor\\BurstAotCompiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.burst@1.8.17\\Editor\\BurstAotCompiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\signupscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\signupscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|c:\\users\\63955\\documents\\codes\\unity projects\\edudash_2.0\\assets\\scripts\\spawner_questions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|c:\\users\\63955\\documents\\codes\\unity projects\\edudash_2.0\\assets\\scripts\\loginscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\loginscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|c:\\users\\63955\\documents\\codes\\unity projects\\edudash_2.0\\assets\\scripts\\signoutscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\signoutscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\services\\authmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\services\\authmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\services\\authgate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\services\\authgate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\spawner_questions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawner_questions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\scenemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scenemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\buttonlistenerdifficulty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\buttonlistenerdifficulty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\buttonlistenersubject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\buttonlistenersubject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\game_param_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game_param_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\sqlite_db_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sqlite_db_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\scenemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scenemanagerscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\player_magnet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player_magnet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,83 +54,96 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAswAAAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAANIAAAAAAAAAAAAuwPAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-23T05:35:48.181Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Spawner_Questions.cs",
               "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Spawner_Questions.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Spawner_Questions.cs",
               "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Spawner_Questions.cs",
               "RelativeToolTip": "Assets\\Scripts\\Spawner_Questions.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAYwDsAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAAAMcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-20T13:33:07.538Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SignOutScript.cs",
+              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\SignOutScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SignOutScript.cs",
+              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\SignOutScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SignOutScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T03:59:54.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginScript.cs",
+              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\LoginScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LoginScript.cs",
+              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\LoginScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LoginScript.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAwC8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T05:08:26.738Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BurstAotCompiler.cs",
-              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Library\\PackageCache\\com.unity.burst@1.8.17\\Editor\\BurstAotCompiler.cs",
-              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.burst@1.8.17\\Editor\\BurstAotCompiler.cs",
-              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Library\\PackageCache\\com.unity.burst@1.8.17\\Editor\\BurstAotCompiler.cs",
-              "RelativeToolTip": "Library\\PackageCache\\com.unity.burst@1.8.17\\Editor\\BurstAotCompiler.cs",
-              "ViewState": "AgIAAJQEAAAAAAAAAAApwKMEAABXAAAAAAAAAA==",
+              "Title": "SignupScript.cs",
+              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\SignupScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SignupScript.cs",
+              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\SignupScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SignupScript.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwHAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T13:32:51.005Z",
+              "WhenOpened": "2025-02-23T05:58:36.283Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ButtonListenerDifficulty.cs",
-              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\ButtonListenerDifficulty.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ButtonListenerDifficulty.cs",
-              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\ButtonListenerDifficulty.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ButtonListenerDifficulty.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T12:42:33.137Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ButtonListenerSubject.cs",
-              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\ButtonListenerSubject.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ButtonListenerSubject.cs",
-              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\ButtonListenerSubject.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ButtonListenerSubject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Title": "AuthManager.cs",
+              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Services\\AuthManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Services\\AuthManager.cs",
+              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Services\\AuthManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Services\\AuthManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T12:24:14.497Z"
+              "WhenOpened": "2025-02-23T03:34:56.57Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Game_Param_Manager.cs",
-              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Game_Param_Manager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Game_Param_Manager.cs",
-              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Game_Param_Manager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Game_Param_Manager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAMAAAAkAAAAAAAAAA==",
+              "Title": "AuthGate.cs",
+              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Services\\AuthGate.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Services\\AuthGate.cs",
+              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Services\\AuthGate.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Services\\AuthGate.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAmwAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T12:09:12.697Z"
+              "WhenOpened": "2025-02-23T03:22:57.415Z"
             },
             {
               "$type": "Document",
@@ -128,21 +153,46 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\SceneManagerScript.cs",
               "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\SceneManagerScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\SceneManagerScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T11:56:36.478Z"
+              "WhenOpened": "2025-02-22T04:17:54.548Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SQLite_DB_Manager.cs",
-              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\SQLite_DB_Manager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SQLite_DB_Manager.cs",
-              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\SQLite_DB_Manager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SQLite_DB_Manager.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAowBQAAAAhAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "Game_Param_Manager.cs",
+              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Game_Param_Manager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Game_Param_Manager.cs",
+              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Game_Param_Manager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Game_Param_Manager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T10:21:56.896Z"
+              "WhenOpened": "2025-02-22T04:17:23.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
+              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Player.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwDIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T16:33:25.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Player_Magnet.cs",
+              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Player_Magnet.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Magnet.cs",
+              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Player_Magnet.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player_Magnet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T19:26:29.727Z"
             }
           ]
         }

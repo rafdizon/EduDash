@@ -8,14 +8,26 @@ public class Player : MonoBehaviour
     private Vector2 direction;
 
     public float jumpForce;
+    public float gravityForceApex;
+    public float gravityForce;
 
-    private int jumpCounter = 0;
-    private float jumpCD = 0.2f;
-    private float jumpCDTimer = 0f;
+    private float screenUpperLimit;
+
+    public float flightDuration = 3.0f;
+    public float flightTimer = 3.0f;
+
+    public Transform magnet;
 
     private void Awake()
     {
         player = GetComponent<Rigidbody2D>();
+        magnet = transform.Find("Magnet Aura");
+        
+        screenUpperLimit = Camera.main.transform.position.y + 1;
+    }
+    private void Start()
+    {
+        magnet.gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -25,20 +37,63 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (jumpCD > 0)
+        bool jumpInput = Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space);
+        
+        if (isGrounded)
         {
-            jumpCDTimer -= Time.deltaTime;
+            flightTimer += 1.5f * Time.deltaTime;
+            if(flightTimer >= flightDuration)
+            {
+                flightTimer = flightDuration;
+            }
         }
-
-        bool jumpInput = Input.touchCount > 0 || Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space);
-
-        if (jumpInput && (isGrounded || jumpCounter < 2) && jumpCDTimer <= 0)
+        if (jumpInput && flightTimer > 0)
         {
-            direction.y = jumpForce;
-            player.velocity = direction;
-            isGrounded = false;
-            jumpCounter++;
-            jumpCDTimer = jumpCD;
+            flightTimer -= Time.deltaTime;
+            if (flightTimer <= 0)
+            {
+                flightTimer = 0;
+            }
+            if (transform.position.y < screenUpperLimit)
+            {
+                direction.y = jumpForce;
+                player.velocity = direction;
+                isGrounded = false;
+            }
+            else if(transform.position.y >= screenUpperLimit)
+            {
+                direction.y = 0;
+                player.gravityScale = 0;
+                player.velocity = direction;
+            }
+        }
+        else if (Input.touchCount > 0 && flightTimer > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if(touch.phase == TouchPhase.Began)
+            {
+                flightTimer -= Time.deltaTime;
+                if (flightTimer <= 0)
+                {
+                    flightTimer = 0;
+                }
+                if (transform.position.y < screenUpperLimit)
+                {
+                    direction.y = jumpForce;
+                    player.velocity = direction;
+                    isGrounded = false;
+                }
+                else if (transform.position.y >= screenUpperLimit)
+                {
+                    direction.y = 0;
+                    player.gravityScale = 0;
+                    player.velocity = direction;
+                }
+            }
+        }
+        else
+        {
+            player.gravityScale = gravityForce;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -46,8 +101,6 @@ public class Player : MonoBehaviour
         if(collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            jumpCounter = 0;
-            jumpCDTimer = 0f;
         }
     }
 }

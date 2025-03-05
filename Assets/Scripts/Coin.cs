@@ -4,19 +4,30 @@ public class Coin : MonoBehaviour
 {
     private float leftEdge;
 
+    public float speed = 5;
+
+    Rigidbody2D rb;
+
+    private GameObject player;
     private void Awake()
     {
         leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 2f;
+        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindWithTag("Player");
     }
 
     private void Update()
     {
-        transform.position += GameManager.Instance.gameSpeed * Time.deltaTime * Vector3.left;
-
-        if(transform.position.x < leftEdge)
+        if (transform.position.x < leftEdge)
         {
             Destroy(gameObject);
         }
+        rb.velocity = Vector2.left * GameManager.Instance.gameSpeed;
+    }
+
+    public void MoveToPlayer()
+    {
+        transform.position = Vector3.Lerp(this.transform.position, player.transform.position, Time.deltaTime * speed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
