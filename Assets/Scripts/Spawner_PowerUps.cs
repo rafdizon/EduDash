@@ -9,6 +9,7 @@ public class Spawner_PowerUps : MonoBehaviour
 
     private Spawner_Questions spawner_questions;
     private Spawner_Coins spawner_coins;
+    public bool isBuffOnScreen;
 
     [System.Serializable]
     public struct Power_Up_Object
@@ -30,6 +31,7 @@ public class Spawner_PowerUps : MonoBehaviour
         spawner_coins = FindObjectOfType<Spawner_Coins>();
 
         spawnCD = Time.time + Random.Range(10f, 20f);
+        isBuffOnScreen = false;
     }
 
     private void OnDisable()
@@ -38,6 +40,7 @@ public class Spawner_PowerUps : MonoBehaviour
     }
     public void Spawn()
     {
+        isBuffOnScreen = true;
         float spawnChance = Random.value;
 
         Power_Up_Object selectedPowerUp = powerups[Random.Range(0, powerups.Length)];
@@ -53,7 +56,7 @@ public class Spawner_PowerUps : MonoBehaviour
     {
         bool powerUpActive = GameManager.Instance.isPowerUp2x || GameManager.Instance.isPowerUpMagnet || GameManager.Instance.isPowerUpStrongLungs;
 
-        if (spawner_coins.AreCoinsOnScreen() || powerUpActive)
+        if (isBuffOnScreen || spawner_coins.AreCoinsOnScreen() || powerUpActive)
         {
             spawnCD = Time.time + Random.Range(1f, 3f);
         }

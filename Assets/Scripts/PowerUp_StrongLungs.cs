@@ -5,9 +5,15 @@ using UnityEngine;
 public class PowerUp_StrongLungs : MonoBehaviour
 {
     private float leftEdge;
+    private Spawner_PowerUps spawner_powerups;
+
     private void Awake()
     {
         leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 5f;
+    }
+    private void Start()
+    {
+        spawner_powerups = FindObjectOfType<Spawner_PowerUps>();
     }
     private void Update()
     {
@@ -15,6 +21,7 @@ public class PowerUp_StrongLungs : MonoBehaviour
 
         if (transform.position.x < leftEdge)
         {
+            spawner_powerups.isBuffOnScreen = false;
             Destroy(gameObject);
         }
     }
@@ -23,6 +30,7 @@ public class PowerUp_StrongLungs : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            spawner_powerups.isBuffOnScreen = false;
             GameManager.Instance.PowerUpStrongLungs();
             Destroy(gameObject);
         }

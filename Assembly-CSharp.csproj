@@ -62,7 +62,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Coin.cs" />
     <Compile Include="Assets\Scripts\Hit_Effect.cs" />
+    <Compile Include="Assets\Scripts\UserDataScript.cs" />
     <Compile Include="Assets\Scripts\Obstacle.cs" />
+    <Compile Include="Assets\Scripts\ProfilePageScript.cs" />
     <Compile Include="Assets\Assets\Free Pixel Space Platform Pack\Astronaut\AnimatePlayer.cs" />
     <Compile Include="Assets\Scripts\Spawner_PowerUps.cs" />
     <Compile Include="Assets\Scripts\PowerUp_StrongLungs.cs" />

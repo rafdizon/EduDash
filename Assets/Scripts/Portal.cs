@@ -14,7 +14,7 @@ public class Portal : MonoBehaviour
     }
     private void Update()
     {
-        transform.position += (GameManager.Instance.gameSpeed * 0.6f) * Time.deltaTime * Vector3.left;
+        transform.position += (GameManager.Instance.gameSpeed * 0.75f) * Time.deltaTime * Vector3.left;
 
         if(transform.position.x < leftEdge)
         {

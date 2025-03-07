@@ -59,6 +59,7 @@ public class Spawner_Questions : MonoBehaviour
     {
         if (questionsList != null)
         {
+            if (isQuestionOnScreen) return;
             isQuestionOnScreen = true;
             Debug.Log($"Number: {questionsList.Count}");
             var randomQuestionIndex = Random.Range(0, (questionsList.Count - 1));
@@ -119,6 +120,7 @@ public class Spawner_Questions : MonoBehaviour
         if (!isQuestionOnScreen && Time.time >= spawnCD)
         {
             Spawn();
+            
         }
     }
     public void AnswerSelected(string answer)

@@ -1,4 +1,5 @@
 using Firebase.Auth;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,13 +18,18 @@ public class AuthGate : MonoBehaviour
 
     private void HandleAuthStateChanged(FirebaseUser user)
     {
-        if (user != null) 
+        if (user != null)
         {
-            SceneManager.LoadScene("MainMenu");
+            StartCoroutine(WaitForUserDataThenLoadScene("MainMenu"));
         }
         else
         {
             SceneManager.LoadScene("LoginPage");
         }
+    }
+    private IEnumerator WaitForUserDataThenLoadScene(string sceneName)
+    {
+        yield return new WaitUntil(() => UserDataScript.Instance.userData != null); 
+        SceneManager.LoadScene(sceneName);
     }
 }
