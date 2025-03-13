@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Spawner_PowerUps : MonoBehaviour
+public class Spawner_PowerUps : Spawner
 {
     private float screenUpperLimit;
     private float screenLowerLimit;
@@ -37,6 +37,16 @@ public class Spawner_PowerUps : MonoBehaviour
     private void OnDisable()
     {
         CancelInvoke();
+    }
+
+    public override void Activate()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public override void Deactivate()
+    {
+        gameObject?.SetActive(false);
     }
     public void Spawn()
     {

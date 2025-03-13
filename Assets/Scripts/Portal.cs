@@ -4,8 +4,8 @@ public class Portal : MonoBehaviour
 {
     private float leftEdge;
     private Spawner_Questions spawner_questions;
+    public string choice;
     public string letterChoice;
-
     private void Awake()
     {
         leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 2f;
@@ -28,7 +28,7 @@ public class Portal : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            spawner_questions.AnswerSelected(letterChoice);
+            spawner_questions.AnswerSelected(choice);
             //spawner_questions.answerSelected = letterChoice;
             Destroy(gameObject);
             //spawner_questions.isAnswerSelected = true;

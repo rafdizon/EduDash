@@ -29,9 +29,9 @@ public class GameManager : MonoBehaviour
     public RectTransform pauseScreen;
 
     public Spawner_BG spawnerBG;
-    public Spawner_Coins spawnerCoins;
-    public Spawner_Questions spawnerQuestions;
-    public Spawner_Obstacles spawnerObstacles;
+    public Spawner spawnerCoins;
+    public Spawner spawnerQuestions;
+    public Spawner spawnerObstacles;
 
     public Slider oxygenLevelBar;
     public Slider powerUpBarDuration;
@@ -90,9 +90,9 @@ public class GameManager : MonoBehaviour
         gameOverScreen.gameObject.SetActive(false);
 
         spawnerBG.gameObject.SetActive(true);
-        spawnerCoins.gameObject.SetActive(true);
-        spawnerQuestions.gameObject.SetActive(true);
-        spawnerObstacles.gameObject.SetActive(true);
+        spawnerCoins.Activate();
+        spawnerQuestions.Activate();
+        spawnerObstacles.Activate();
 
         oxygenLevel = 100;
         coinCount = 0;
@@ -103,6 +103,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 
     private void Update()
     {
@@ -137,9 +138,9 @@ public class GameManager : MonoBehaviour
         StartCoroutine(GameOverScreen(2, userInfo.highScore, userInfo.coins));
 
         spawnerBG.gameObject.SetActive(false);
-        spawnerCoins.gameObject.SetActive(false);
-        spawnerQuestions.gameObject.SetActive(false);
-        spawnerObstacles.gameObject.SetActive(false);
+        spawnerCoins.Deactivate();
+        spawnerQuestions.Deactivate();
+        spawnerObstacles.Deactivate();
         player.gameObject.SetActive(false);
     }
     public void Pause()
@@ -149,9 +150,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
 
         spawnerBG.gameObject.SetActive(false);
-        spawnerCoins.gameObject.SetActive(false);
-        spawnerQuestions.gameObject.SetActive(false);
-        spawnerObstacles.gameObject.SetActive(false);
+        spawnerCoins.Deactivate();
+        spawnerQuestions.Deactivate();
+        spawnerObstacles.Deactivate();
         
     }
     public void Resume()
@@ -161,9 +162,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
 
         spawnerBG.gameObject.SetActive(true);
-        spawnerCoins.gameObject.SetActive(true);
-        spawnerQuestions.gameObject.SetActive(true);
-        spawnerObstacles.gameObject.SetActive(true);
+        spawnerCoins.Activate();
+        spawnerQuestions.Activate();
+        spawnerObstacles.Activate();
     }
 
     public void PowerUp2xScore()

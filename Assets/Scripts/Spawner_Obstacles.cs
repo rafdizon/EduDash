@@ -1,7 +1,7 @@
 using UnityEngine;
 using static Spawner_BG;
 
-public class Spawner_Obstacles : MonoBehaviour
+public class Spawner_Obstacles : Spawner
 {
     private float screenUpperLimit;
     private float screenLowerLimit;
@@ -41,6 +41,16 @@ public class Spawner_Obstacles : MonoBehaviour
     private void OnEnable()
     {
 
+    }
+
+    public override void Activate()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public override void Deactivate()
+    {
+        gameObject?.SetActive(false);
     }
 
     public void Spawn()

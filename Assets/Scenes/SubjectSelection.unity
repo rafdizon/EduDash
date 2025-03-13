@@ -179,7 +179,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Math
+  m_text: 'Science
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5ead4dc8c2ffc1428872bfcf5e6c75c, type: 2}
   m_sharedMaterial: {fileID: 8683459145380989433, guid: b5ead4dc8c2ffc1428872bfcf5e6c75c, type: 2}
@@ -993,7 +995,7 @@ GameObject:
   - component: {fileID: 1071596214}
   - component: {fileID: 1071596213}
   m_Layer: 5
-  m_Name: Math Button
+  m_Name: Science Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1452,7 +1454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   english: {fileID: 1450601538}
   filipino: {fileID: 598873016}
-  math: {fileID: 1071596213}
+  science: {fileID: 1071596213}
 --- !u!4 &1449968385
 Transform:
   m_ObjectHideFlags: 0

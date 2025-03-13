@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 215314739}
   - component: {fileID: 215314738}
   m_Layer: 5
-  m_Name: Hard Button
+  m_Name: Option 3 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hard
+  m_text: '-'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5ead4dc8c2ffc1428872bfcf5e6c75c, type: 2}
   m_sharedMaterial: {fileID: 8683459145380989433, guid: b5ead4dc8c2ffc1428872bfcf5e6c75c, type: 2}
@@ -476,8 +476,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1704,7 +1704,7 @@ GameObject:
   - component: {fileID: 1499874783}
   - component: {fileID: 1499874785}
   m_Layer: 5
-  m_Name: Medium Button
+  m_Name: Option 2 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1881,7 +1881,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Select Difficulty
+  m_text: Select Topic
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 22664ddbf9055e1478820e9eb57043ee, type: 2}
   m_sharedMaterial: {fileID: -233343051534928334, guid: 22664ddbf9055e1478820e9eb57043ee, type: 2}
@@ -1971,7 +1971,7 @@ GameObject:
   - component: {fileID: 1571816075}
   - component: {fileID: 1571816077}
   m_Layer: 5
-  m_Name: Easy Button
+  m_Name: Option 1 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2148,7 +2148,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Medium
+  m_text: '-'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5ead4dc8c2ffc1428872bfcf5e6c75c, type: 2}
   m_sharedMaterial: {fileID: 8683459145380989433, guid: b5ead4dc8c2ffc1428872bfcf5e6c75c, type: 2}
@@ -2175,8 +2175,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2269,9 +2269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc3c65c9cda3da4fb1eb212da1c5f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  easy: {fileID: 1571816077}
-  medium: {fileID: 1499874785}
-  hard: {fileID: 215314738}
+  option1: {fileID: 1571816077}
+  option2: {fileID: 1499874785}
+  option3: {fileID: 215314738}
 --- !u!1 &1998219050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,7 +2412,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Easy
+  m_text: '-'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5ead4dc8c2ffc1428872bfcf5e6c75c, type: 2}
   m_sharedMaterial: {fileID: 8683459145380989433, guid: b5ead4dc8c2ffc1428872bfcf5e6c75c, type: 2}
@@ -2439,8 +2439,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

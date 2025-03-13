@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.Networking;
 
-
 public class Questions_DB_Manager : MonoBehaviour
 {
     private SQLiteConnection dbConnection;
@@ -17,15 +16,16 @@ public class Questions_DB_Manager : MonoBehaviour
 
     public delegate void OnQuestionsLoaded(List<Questions> questions);
 
-    public void InitializeDatabase(string subject, string difficulty, OnQuestionsLoaded callback)
+    public void InitializeDatabase(string subject, string topic, OnQuestionsLoaded callback)
     {
-        StartCoroutine(LoadDatabaseCoroutine(subject, difficulty, callback));
+        StartCoroutine(LoadDatabaseCoroutine(subject, topic, callback));
     }
 
-    private IEnumerator LoadDatabaseCoroutine(string subject, string difficulty, OnQuestionsLoaded callback)
+    private IEnumerator LoadDatabaseCoroutine(string subject, string topic, OnQuestionsLoaded callback)
     {
-        string dbName = "Questions.db";
-        string dbPath = Path.Combine(Application.persistentDataPath, dbName);
+        string dbName = "Questions_New.db";
+        //string dbPath = Path.Combine(Application.persistentDataPath, dbName);
+        string dbPath = Path.Combine(Application.streamingAssetsPath, dbName);
 
         if (!File.Exists(dbPath))
         {
@@ -62,16 +62,16 @@ public class Questions_DB_Manager : MonoBehaviour
             yield break; 
         }
 
-        var questions = dbConnection.Query<Questions>($"SELECT * FROM Questions WHERE Subject='{subject}' AND Difficulty='{difficulty}'");
+        var questions = dbConnection.Query<Questions>($"SELECT * FROM Questions WHERE Subject='{subject}' AND Topic='{topic}'");
 
         Debug.Log("Questions retrieved: " + questions.Count);
 
         callback(questions);
     }
 
-    public void GetQuestions(string subject, string difficulty, OnQuestionsLoaded callback)
+    public void GetQuestions(string subject, string topic, OnQuestionsLoaded callback)
     {
-        InitializeDatabase(subject, difficulty, callback);
+        InitializeDatabase(subject, topic, callback);
     }
 }
 
@@ -80,10 +80,10 @@ public class Questions
     [PrimaryKey, AutoIncrement]
     public int Id { get; set; }
     public string Subject { get; set; }
-    public string Difficulty { get; set; }
+    public string Topic { get; set; }
     public string Question { get; set; }
-    public string Choices_A { get; set; }
-    public string Choices_B { get; set; }
-    public string Choices_C { get; set; }
+    public string Choice_A { get; set; }
+    public string Choice_B { get; set; }
+    public string Choice_C { get; set; }
     public string Correct_Answer { get; set; }
 }

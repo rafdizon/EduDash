@@ -81,4 +81,27 @@ public class FirestoreManager : MonoBehaviour
             return null;
         }
     }
+
+    public async Task<Dictionary<string, object>> GetQuiz(string code)
+    {
+        if (firestore == null)
+        {
+            Debug.LogError("Firestore is not initialized.");
+            await Task.Delay(1000);
+        }
+
+        DocumentReference docRef = firestore.Collection("custom_quiz").Document(code);
+        DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+
+        Debug.Log(snapshot.ToString());
+        if (snapshot.Exists)
+        {
+            return snapshot.ToDictionary();
+        }
+        else
+        {
+            Debug.LogWarning("Document not found.");
+            return null;
+        }
+    }
 }

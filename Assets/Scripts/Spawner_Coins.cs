@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Spawner_Coins : MonoBehaviour
+public class Spawner_Coins : Spawner
 {
     public GameObject coin;
     public float spawnInterval;
@@ -33,6 +33,15 @@ public class Spawner_Coins : MonoBehaviour
             spawnPos = new Vector3(spawnPos.x + spawnInterval, spawnPos.y);
             Instantiate(coin,spawnPos, Quaternion.identity);
         }
+    }
+    public override void Activate()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public override void Deactivate()
+    {
+        gameObject?.SetActive(false);
     }
     private void Update()
     {

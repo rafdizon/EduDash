@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Spawner_Questions : MonoBehaviour
+public class Spawner_Questions : Spawner
 {
     public bool isQuestionOnScreen;
     public bool isChoicesOnScreen;
@@ -36,7 +36,7 @@ public class Spawner_Questions : MonoBehaviour
             Destroy(tempPortal);
         }
         string subject = GameParamManager.subject;
-        string difficulty = GameParamManager.difficulty;
+        string topic = GameParamManager.topic;
         spawnCD = Time.time + Random.Range(4f, 7f);
         isAnswerSelected = false;
         isQuestionOnScreen = false;
@@ -44,16 +44,27 @@ public class Spawner_Questions : MonoBehaviour
 
         controlPanelText.text = "";
         dbManager = FindObjectOfType<Questions_DB_Manager>();
-        dbManager.GetQuestions(subject, difficulty, (questions) =>
+        dbManager.GetQuestions(subject, topic, (questions) =>
         {
             questionsList = questions;
         }
+
         );
         Debug.Log($"Get success: {questionsList != null}");
     }
     private void OnDisable()
     {
         CancelInvoke();
+    }
+
+    public override void Activate()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public override void Deactivate()
+    {
+        gameObject?.SetActive(false);
     }
     public void Spawn()
     {
@@ -69,10 +80,8 @@ public class Spawner_Questions : MonoBehaviour
 
             correctAnswer = questionsList[randomQuestionIndex].Correct_Answer;
             //Debug.Log($"Q: {questionsList[randomQuestionIndex].Question}");
-            Debug.Log($"Answer: {questionsList[randomQuestionIndex].Correct_Answer}");
+            Debug.Log($"Correct Answer: {questionsList[randomQuestionIndex].Correct_Answer}");
             float i = (portals.Length - 1) * 0.7f;
-
-            //portals = portals.OrderBy(p => Random.value).ToArray();
 
             foreach (Portal_Object portal in portals)
             {
@@ -90,18 +99,24 @@ public class Spawner_Questions : MonoBehaviour
 
                 string choice = "";
 
+                Debug.Log(questionsList[randomQuestionIndex].Correct_Answer);
+
                 switch (portalScript.letterChoice)
                 {
                     case "A":
-                        choice = questionsList[randomQuestionIndex].Choices_A;
+                        choice = questionsList[randomQuestionIndex].Choice_A;
+                        portalScript.choice = questionsList[randomQuestionIndex].Choice_A;
                         break;
                     case "B":
-                        choice = questionsList[randomQuestionIndex].Choices_B;
+                        choice = questionsList[randomQuestionIndex].Choice_B;
+                        portalScript.choice = questionsList[randomQuestionIndex].Choice_B;
                         break;
                     case "C":
-                        choice = questionsList[randomQuestionIndex].Choices_C;
+                        choice = questionsList[randomQuestionIndex].Choice_C;
+                        portalScript.choice = questionsList[randomQuestionIndex].Choice_C;
                         break;
                 }
+               
 
                 spawn.GetComponentInChildren<TMP_Text>().text = choice;
                 
@@ -120,11 +135,11 @@ public class Spawner_Questions : MonoBehaviour
         if (!isQuestionOnScreen && Time.time >= spawnCD)
         {
             Spawn();
-            
         }
     }
     public void AnswerSelected(string answer)
     {
+        Debug.Log($"Answer: {answer}");
         isAnswerSelected = true;
         foreach (GameObject portal in activePortals)
         {

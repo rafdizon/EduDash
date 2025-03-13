@@ -61,7 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Coin.cs" />
+    <Compile Include="Assets\Scripts\HostModeScripts\Spawner_Questions_Host.cs" />
     <Compile Include="Assets\Scripts\Hit_Effect.cs" />
+    <Compile Include="Assets\Scripts\HostModeScripts\PowerUp_Magnet_Host.cs" />
+    <Compile Include="Assets\Scripts\HostModeScripts\Spawner_Obstacles_Host.cs" />
     <Compile Include="Assets\Scripts\UserDataScript.cs" />
     <Compile Include="Assets\Scripts\Obstacle.cs" />
     <Compile Include="Assets\Scripts\ProfilePageScript.cs" />
@@ -73,13 +76,19 @@
     <Compile Include="Assets\Scripts\Game_Param_Manager.cs" />
     <Compile Include="Assets\Scripts\Portal.cs" />
     <Compile Include="Assets\Scripts\LoginScript.cs" />
+    <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Questions_DB_Manager.cs" />
     <Compile Include="Assets\Scripts\Spawner_Coins.cs" />
     <Compile Include="Assets\Scripts\Choices.cs" />
+    <Compile Include="Assets\Scripts\HostModeScripts\GameManagerHost.cs" />
     <Compile Include="Assets\Scripts\Animate_Coin.cs" />
+    <Compile Include="Assets\Scripts\HostModeScripts\PowerUp_2x_Host.cs" />
     <Compile Include="Assets\Scripts\Spawner_Obstacles.cs" />
+    <Compile Include="Assets\Scripts\JoinPageScript.cs" />
     <Compile Include="Assets\Scripts\Services\AuthGate.cs" />
     <Compile Include="Assets\Scripts\SignOutScript.cs" />
+    <Compile Include="Assets\Scripts\HostModeScripts\LoadingScript.cs" />
+    <Compile Include="Assets\Scripts\HostModeScripts\Listener_Question_Host.cs" />
     <Compile Include="Assets\Scripts\Main_Menu_Script.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -91,6 +100,10 @@
     <Compile Include="Assets\Scripts\Player_Magnet.cs" />
     <Compile Include="Assets\Scripts\BackgroundElements.cs" />
     <Compile Include="Assets\Scripts\PowerUp_2x.cs" />
+    <Compile Include="Assets\Scripts\HostModeScripts\Spawner_PowerUps_Host.cs" />
+    <Compile Include="Assets\Scripts\HostModeScripts\Spawner_Coins_Host.cs" />
+    <Compile Include="Assets\Scripts\HostModeScripts\QuizDataHolder.cs" />
+    <Compile Include="Assets\Scripts\HostModeScripts\PowerUp_StrongLungs_Host.cs" />
     <Compile Include="Assets\Scripts\Spawner_Questions.cs" />
     <Compile Include="Assets\Scripts\SignupScript.cs" />
     <Compile Include="Assets\Scripts\ButtonListenerDifficulty.cs" />
@@ -98,6 +111,7 @@
     <Compile Include="Assets\Scripts\Damage_Effect.cs" />
     <Compile Include="Assets\Scripts\Animate_Rover.cs" />
     <Compile Include="Assets\Scripts\Services\AuthManager.cs" />
+    <Compile Include="Assets\Scripts\HostModeScripts\Portal_Host.cs" />
     <Compile Include="Assets\Scripts\Services\FirestoreManager.cs" />
   </ItemGroup>
   <ItemGroup>

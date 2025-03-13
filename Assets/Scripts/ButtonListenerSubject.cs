@@ -6,13 +6,13 @@ public class ButtonListenerSubject : MonoBehaviour
 {
     public Button english;
     public Button filipino;
-    public Button math;
+    public Button science;
 
     private void Start()
     {
         english.onClick.AddListener(englishClicked);
         filipino.onClick.AddListener(filipinoClicked);
-        math.onClick.AddListener(mathClicked);
+        science.onClick.AddListener(scienceClicked);
     }
 
     void englishClicked()
@@ -25,8 +25,8 @@ public class ButtonListenerSubject : MonoBehaviour
         GameParamManager.subject = "Filipino";
     }
 
-    void mathClicked()
+    void scienceClicked()
     {
-        GameParamManager.subject = "Math";
+        GameParamManager.subject = "Science";
     }
 }
