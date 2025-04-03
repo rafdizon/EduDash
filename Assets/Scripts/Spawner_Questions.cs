@@ -75,19 +75,20 @@ public class Spawner_Questions : Spawner
             Debug.Log($"Number: {questionsList.Count}");
             var randomQuestionIndex = Random.Range(0, (questionsList.Count - 1));
             //Debug.Log($"Index: {randomQuestionIndex}");
-            question = questionsList[randomQuestionIndex].Question;
+            question = questionsList[randomQuestionIndex].Question.Trim();
             controlPanelText.text = question;
 
-            correctAnswer = questionsList[randomQuestionIndex].Correct_Answer;
+            correctAnswer = questionsList[randomQuestionIndex].Correct_Answer.Trim();
             //Debug.Log($"Q: {questionsList[randomQuestionIndex].Question}");
             Debug.Log($"Correct Answer: {questionsList[randomQuestionIndex].Correct_Answer}");
-            float i = (portals.Length - 1) * 0.7f;
+            //float i = (portals.Length - 1) * 0.7f;
 
             foreach (Portal_Object portal in portals)
             {
                 GameObject spawn = Instantiate(portal.prefab);
                 Vector3 newPos = spawn.transform.position;
-                newPos.x = transform.position.x + i;
+                //newPos.x = transform.position.x + i;
+                newPos.x = transform.position.x;
                 spawn.transform.position = newPos;
 
 
@@ -99,21 +100,22 @@ public class Spawner_Questions : Spawner
 
                 string choice = "";
 
-                Debug.Log(questionsList[randomQuestionIndex].Correct_Answer);
-
                 switch (portalScript.letterChoice)
                 {
                     case "A":
-                        choice = questionsList[randomQuestionIndex].Choice_A;
-                        portalScript.choice = questionsList[randomQuestionIndex].Choice_A;
+                        choice = questionsList[randomQuestionIndex].Choice_A.Trim();
+                        portalScript.choice = questionsList[randomQuestionIndex].Choice_A.Trim();
+                        Debug.Log("A: " + portalScript.choice);
                         break;
                     case "B":
-                        choice = questionsList[randomQuestionIndex].Choice_B;
-                        portalScript.choice = questionsList[randomQuestionIndex].Choice_B;
+                        choice = questionsList[randomQuestionIndex].Choice_B.Trim();
+                        portalScript.choice = questionsList[randomQuestionIndex].Choice_B.Trim();
+                        Debug.Log("B: " + portalScript.choice);
                         break;
                     case "C":
-                        choice = questionsList[randomQuestionIndex].Choice_C;
-                        portalScript.choice = questionsList[randomQuestionIndex].Choice_C;
+                        choice = questionsList[randomQuestionIndex].Choice_C.Trim();
+                        portalScript.choice = questionsList[randomQuestionIndex].Choice_C.Trim();
+                        Debug.Log("C: " + portalScript.choice);
                         break;
                 }
                
@@ -121,7 +123,7 @@ public class Spawner_Questions : Spawner
                 spawn.GetComponentInChildren<TMP_Text>().text = choice;
                 
                 activePortals.Add(spawn);
-                i -= 0.7f;
+                //i -= 0.7f;
             }
             GameObject spawnListener = Instantiate(listener);
             Vector3 listenerPos = spawnListener.transform.position;
@@ -150,8 +152,9 @@ public class Spawner_Questions : Spawner
             }
         }
 
-        if(correctAnswer == answer)
+        if(correctAnswer.Trim().Equals(answer.Trim(), System.StringComparison.OrdinalIgnoreCase))
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.answerCorrect);
             Debug.Log("CORRECT");
             GameManager.Instance.score += GameManager.Instance.isPowerUp2x ? 2 : 1;
             controlPanelText.text = "Correct! Oxygen Replenished..."; 
@@ -166,7 +169,8 @@ public class Spawner_Questions : Spawner
         }else
         {
             TriggerDamage();
-            controlPanelText.text = "Warning! Oxygen Leak!";
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.answerWrong);
+            controlPanelText.text = $"Wrong! Correct answer is: {correctAnswer}";
             if (GameManager.Instance.isPowerUpStrongLungs)
             {
                 if (GameManager.Instance.oxygenLevel > 10)

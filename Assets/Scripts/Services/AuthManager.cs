@@ -35,4 +35,8 @@ public class AuthManager : MonoBehaviour
     {
         return auth.CurrentUser;
     }
+    public void NotifyAUthStateChanged()
+    {
+        OnAuthStateChanged?.Invoke(auth.CurrentUser);
+    }
 }

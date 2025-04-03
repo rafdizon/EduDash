@@ -26,7 +26,7 @@ public class Portal_Host : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("AnswerHitBox"))
         {
             spawner_questions.AnswerSelected(letterChoice);
             //spawner_questions.answerSelected = letterChoice;

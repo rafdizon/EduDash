@@ -6,7 +6,6 @@ public class Obstacle : MonoBehaviour
     public float speedMultiplier;
 
     public GameObject hitEffect;
-
     private void Awake()
     {
         leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 5f;
@@ -44,6 +43,7 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.deathHit);
             TriggerHit();
             GameManager.Instance.GameOver();
             Destroy(gameObject);

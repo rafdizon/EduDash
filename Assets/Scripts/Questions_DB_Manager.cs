@@ -21,51 +21,101 @@ public class Questions_DB_Manager : MonoBehaviour
         StartCoroutine(LoadDatabaseCoroutine(subject, topic, callback));
     }
 
+    //    private IEnumerator LoadDatabaseCoroutine(string subject, string topic, OnQuestionsLoaded callback)
+    //    {
+    //        string dbName = "Questions_New.db";
+    //        //string dbPath = Path.Combine(Application.persistentDataPath, dbName);
+    //        string dbPath = Path.Combine(Application.streamingAssetsPath, dbName);
+
+    //        if (!File.Exists(dbPath))
+    //        {
+    //            string sourcePath = Path.Combine(Application.streamingAssetsPath, dbName);
+
+    //#if UNITY_ANDROID
+    //            UnityWebRequest loadDb = UnityWebRequest.Get("jar:file://" + Application.dataPath + "!/assets/" + dbName);
+    //            yield return loadDb.SendWebRequest(); // Wait for the request to finish
+
+    //            if (loadDb.result == UnityWebRequest.Result.Success && loadDb.downloadHandler != null)
+    //            {
+    //                // Only write the file if the data is not null
+    //                File.WriteAllBytes(dbPath, loadDb.downloadHandler.data);
+    //                Debug.Log("Database copied to: " + dbPath);
+    //            }
+    //            else
+    //            {
+    //                // Log error if something went wrong
+    //                Debug.LogError("Failed to load database from StreamingAssets: " + loadDb.error);
+    //            }
+    //#else
+    //            File.Copy(sourcePath, dbPath);
+    //#endif
+
+    //            Debug.Log("Database copied to: " + dbPath);
+    //        }
+
+    //        dbConnection = new SQLiteConnection(dbPath, SQLiteOpenFlags.ReadWrite);
+    //        Debug.Log("Database opened at: " + dbPath);
+
+    //        if (dbConnection == null)
+    //        {
+    //            Debug.LogError("Database connection is null.");
+    //            yield break; 
+    //        }
+
+    //        var questions = dbConnection.Query<Questions>($"SELECT * FROM Questions WHERE Subject='{subject}' AND Topic='{topic}'");
+
+    //        Debug.Log("Questions retrieved: " + questions.Count);
+
+    //        callback(questions);
+    //    }
+
+    //    public void GetQuestions(string subject, string topic, OnQuestionsLoaded callback)
+    //    {
+    //        InitializeDatabase(subject, topic, callback);
+    //    }
     private IEnumerator LoadDatabaseCoroutine(string subject, string topic, OnQuestionsLoaded callback)
     {
         string dbName = "Questions_New.db";
-        //string dbPath = Path.Combine(Application.persistentDataPath, dbName);
-        string dbPath = Path.Combine(Application.streamingAssetsPath, dbName);
+        // Use persistentDataPath as destination (writable location)
+        string dbPath = Path.Combine(Application.persistentDataPath, dbName);
 
         if (!File.Exists(dbPath))
         {
-            string sourcePath = Path.Combine(Application.streamingAssetsPath, dbName);
-
 #if UNITY_ANDROID
-            UnityWebRequest loadDb = UnityWebRequest.Get("jar:file://" + Application.dataPath + "!/assets/" + dbName);
-            yield return loadDb.SendWebRequest(); // Wait for the request to finish
+            // Construct the full URL to the database file inside StreamingAssets.
+            string sourcePath = Path.Combine(Application.streamingAssetsPath, dbName);
+            UnityWebRequest loadDb = UnityWebRequest.Get(sourcePath);
+            yield return loadDb.SendWebRequest(); // Wait for the request to complete
 
             if (loadDb.result == UnityWebRequest.Result.Success && loadDb.downloadHandler != null)
             {
-                // Only write the file if the data is not null
                 File.WriteAllBytes(dbPath, loadDb.downloadHandler.data);
                 Debug.Log("Database copied to: " + dbPath);
             }
             else
             {
-                // Log error if something went wrong
                 Debug.LogError("Failed to load database from StreamingAssets: " + loadDb.error);
+                yield break;
             }
 #else
+            // For other platforms, simply copy from StreamingAssets.
+            string sourcePath = Path.Combine(Application.streamingAssetsPath, dbName);
             File.Copy(sourcePath, dbPath);
 #endif
-
-            Debug.Log("Database copied to: " + dbPath);
         }
 
+        // Open the SQLite database from the writable location.
         dbConnection = new SQLiteConnection(dbPath, SQLiteOpenFlags.ReadWrite);
         Debug.Log("Database opened at: " + dbPath);
 
         if (dbConnection == null)
         {
             Debug.LogError("Database connection is null.");
-            yield break; 
+            yield break;
         }
 
         var questions = dbConnection.Query<Questions>($"SELECT * FROM Questions WHERE Subject='{subject}' AND Topic='{topic}'");
-
         Debug.Log("Questions retrieved: " + questions.Count);
-
         callback(questions);
     }
 

@@ -3,7 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|c:\\users\\63955\\documents\\codes\\unity projects\\edudash_2.0\\assets\\scripts\\services\\firestoremanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|c:\\users\\63955\\documents\\codes\\unity projects\\edudash_2.0\\assets\\scripts\\shopscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shopscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|c:\\users\\63955\\documents\\codes\\unity projects\\edudash_2.0\\assets\\scripts\\main_menu_script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\main_menu_script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\user_info_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\user_info_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\assets\\scripts\\services\\firestoremanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44DC19A9-C201-E4EB-048B-D0FB302825F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\services\\firestoremanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -18,33 +34,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAswDcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAYwEAAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-13T17:16:42.064Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "FirestoreManager.cs",
               "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Services\\FirestoreManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Services\\FirestoreManager.cs",
               "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Services\\FirestoreManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Services\\FirestoreManager.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAmwDsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-13T13:51:15.134Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Main_Menu_Script.cs",
+              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Main_Menu_Script.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Main_Menu_Script.cs",
+              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Main_Menu_Script.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Main_Menu_Script.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T22:13:11.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShopScript.cs",
+              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\ShopScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ShopScript.cs",
+              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\ShopScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ShopScript.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAiwBUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T21:19:08.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
+              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\Player.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAowHoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T20:58:06.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User_Info_Manager.cs",
+              "DocumentMoniker": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\User_Info_Manager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\User_Info_Manager.cs",
+              "ToolTip": "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0\\Assets\\Scripts\\User_Info_Manager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\User_Info_Manager.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAcwB8AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T20:54:30.697Z",
               "EditorCaption": ""
             }
           ]

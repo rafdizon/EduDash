@@ -26,19 +26,11 @@ public class Portal : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("AnswerHitBox"))
         {
             spawner_questions.AnswerSelected(choice);
-            //spawner_questions.answerSelected = letterChoice;
             Destroy(gameObject);
-            //spawner_questions.isAnswerSelected = true;
 
-            /*
-            if (spawner_questions != null && !spawner_questions.isAnswerSelected)
-            {
-                spawner_questions.isAnswerSelected = true;
-            }
-            */
         }
     }
 }

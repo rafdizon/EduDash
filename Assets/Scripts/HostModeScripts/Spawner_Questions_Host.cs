@@ -12,6 +12,8 @@ public class Spawner_Questions_Host : Spawner
     public string question;
     public string answerSelected;
     public string correctAnswer;
+
+    private HashSet<int> usedQuestions = new HashSet<int>();
     [System.Serializable]
     public struct Portal_Object
     {
@@ -26,7 +28,6 @@ public class Spawner_Questions_Host : Spawner
 
     private List<GameObject> activePortals = new List<GameObject>();
     private List<Dictionary<string, object>> questionsList;
-
     private void Start()
     {
         if (portals.Length > 0)
@@ -44,6 +45,7 @@ public class Spawner_Questions_Host : Spawner
         controlPanelText.text = "";
         questionsList = QuizDataHolder.Instance.quizData;
         Debug.Log($"Get success: {questionsList != null}");
+        GameManager.Instance.isHostMode = true;
     }
     private void OnDisable()
     {
@@ -64,24 +66,36 @@ public class Spawner_Questions_Host : Spawner
     {
         if (questionsList != null)
         {
+            if (usedQuestions.Count >= questionsList.Count)
+            {
+                GameManager.Instance.GameOver("All questions have been used. Game Over!");
+                return;
+            }
+
             if (isQuestionOnScreen) return;
             isQuestionOnScreen = true;
-            Debug.Log($"Number: {questionsList.Count}");
-            var randomQuestionIndex = Random.Range(0, (questionsList.Count - 1));
-            //Debug.Log($"Index: {randomQuestionIndex}");
+
+            int randomQuestionIndex;
+            do
+            {
+                randomQuestionIndex = Random.Range(0, questionsList.Count);
+            } while (usedQuestions.Contains(randomQuestionIndex));
+
+            usedQuestions.Add(randomQuestionIndex);
             question = questionsList[randomQuestionIndex]["question"].ToString();
             controlPanelText.text = question;
 
             correctAnswer = questionsList[randomQuestionIndex]["correct_answer"].ToString();
             //Debug.Log($"Q: {questionsList[randomQuestionIndex].Question}");
             Debug.Log($"Answer: {questionsList[randomQuestionIndex]["correct_answer"]}");
-            float i = (portals.Length - 1) * 0.7f;
+            //float i = (portals.Length - 1) * 0.7f;
 
             foreach (Portal_Object portal in portals)
             {
                 GameObject spawn = Instantiate(portal.prefab);
                 Vector3 newPos = spawn.transform.position;
-                newPos.x = transform.position.x + i;
+                //newPos.x = transform.position.x + i;
+                newPos.x = transform.position.x;
                 spawn.transform.position = newPos;
 
 
@@ -111,7 +125,6 @@ public class Spawner_Questions_Host : Spawner
                 spawn.GetComponentInChildren<TMP_Text>().text = choice;
                 
                 activePortals.Add(spawn);
-                i -= 0.7f;
             }
             GameObject spawnListener = Instantiate(listener);
             Vector3 listenerPos = spawnListener.transform.position;
@@ -142,6 +155,7 @@ public class Spawner_Questions_Host : Spawner
 
         if(correctAnswer.ToLower() == answer.ToLower())
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.answerCorrect);
             Debug.Log("CORRECT");
             GameManager.Instance.score += GameManager.Instance.isPowerUp2x ? 2 : 1;
             controlPanelText.text = "Correct! Oxygen Replenished..."; 
@@ -155,6 +169,7 @@ public class Spawner_Questions_Host : Spawner
             }
         }else
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.answerWrong);
             TriggerDamage();
             controlPanelText.text = "Warning! Oxygen Leak!";
             if (GameManager.Instance.isPowerUpStrongLungs)

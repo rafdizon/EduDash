@@ -1,0 +1,273 @@
+{
+    "m_SelectedDeviceId": "192.168.100.132:35191",
+    "m_SelectedProcess": {
+        "deviceId": "192.168.100.132:35191",
+        "name": "com.EduDash.EduDash_Game",
+        "processId": 8247,
+        "exited": false
+    },
+    "m_SelectedPriority": 0,
+    "m_KnownProcessesForSerialization": [
+        {
+            "deviceId": "192.168.100.132:36217",
+            "name": "com.android.launcher3",
+            "processId": 1462,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:36217",
+            "name": "com.EduDash.EduDash",
+            "processId": 20536,
+            "exited": true
+        },
+        {
+            "deviceId": "192.168.100.132:36217",
+            "name": "com.EduDash.EduDash",
+            "processId": 21080,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:36217",
+            "name": "com.EduDash.EduDash",
+            "processId": 26541,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:36217",
+            "name": "com.EduDash.EduDash",
+            "processId": 14577,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:36217",
+            "name": "com.EduDash.EduDash",
+            "processId": 1796,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:41003",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 24520,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:41003",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 25412,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:39741",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 31083,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:41673",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 18274,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:41673",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 20955,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:41673",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 23608,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:41673",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 21103,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:41551",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 25654,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:36723",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 25288,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:36723",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 28836,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:35487",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 27618,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:35487",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 32270,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:36347",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 25371,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:45189",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 5687,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:37393",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 18009,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:37393",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 20465,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:45437",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 5957,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:42369",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 32441,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:42369",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 2931,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:42369",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 4556,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:35191",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 4667,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.100.132:35191",
+            "name": "com.EduDash.EduDash_Game",
+            "processId": 8247,
+            "exited": false
+        }
+    ],
+    "m_Tags": {
+        "m_Entries": [
+            {
+                "m_Name": "Filter by all listed tags",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "No Filter",
+                "m_Selected": true
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Tag Control...",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Unity",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "CRASH",
+                "m_Selected": false
+            }
+        ]
+    },
+    "m_ExtraWindowState": {
+        "Type": 0,
+        "Height": 0.0
+    },
+    "m_MemoryViewerState": {
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        "MemoryGroup": 2,
+        "AutoCapture": true
+    },
+    "m_FilterOptions": {
+        "m_Filter": "",
+        "m_UseRegularExpressions": false,
+        "m_MatchCase": false
+    },
+    "m_SymbolPaths": [],
+    "m_CaptureVideoSettings": {
+        "TimeLimitEnabled": false,
+        "TimeLimit": 180,
+        "VideoSizeEnabled": false,
+        "VideoSizeX": 1280,
+        "VideoSizeY": 720,
+        "BitRateEnabled": false,
+        "BitRateK": 20000,
+        "DisplayIdEnabled": false,
+        "DisplayId": ""
+    },
+    "m_ScreenCaptureSettings": {
+        "Mode": 0,
+        "m_LastSaveLocation": [
+            "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0",
+            "C:\\Users\\63955\\Documents\\CODES\\Unity Projects\\EduDash_2.0"
+        ]
+    },
+    "m_QueryLayoutSettings": {
+        "LastLayoutSaveLocation": "",
+        "LastScreenshotSaveLocation": ""
+    },
+    "m_InputSettings": {
+        "ShiftModifier": false,
+        "SendText": "",
+        "PosixKillSignal": 0,
+        "TargetProcess": {
+            "deviceId": "",
+            "name": "",
+            "processId": 0,
+            "exited": false
+        }
+    },
+    "m_AutoScroll": 2
+}

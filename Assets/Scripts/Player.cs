@@ -6,10 +6,13 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D player;
     private Vector2 direction;
+    private SpriteRenderer sr;
 
     public float jumpForce;
     public float gravityForceApex;
     public float gravityForce;
+
+    public SpriteRenderer controlPanel;
 
     private float screenUpperLimit;
 
@@ -22,12 +25,23 @@ public class Player : MonoBehaviour
     {
         player = GetComponent<Rigidbody2D>();
         magnet = transform.Find("Magnet Aura");
+        sr = GetComponent<SpriteRenderer>();
         
         screenUpperLimit = Camera.main.transform.position.y + 1;
     }
     private void Start()
     {
         magnet.gameObject.SetActive(false);
+        User_Info info = SaveSystem.LoadInfo();
+        if (!string.IsNullOrEmpty(info.avatarColor))
+        {
+            Color savedColor;
+            if (ColorUtility.TryParseHtmlString(info.avatarColor, out savedColor))
+            {
+                sr.color = savedColor;
+                controlPanel.color = savedColor;
+            }
+        }
     }
 
     private void OnEnable()
@@ -102,5 +116,14 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
         }
+    }
+    public void OnColorSelected(Color newColor)
+    {
+        sr.color = newColor;
+        controlPanel.color = newColor;
+
+        User_Info info = SaveSystem.LoadInfo();
+        info.avatarColor = "#" + ColorUtility.ToHtmlStringRGB(newColor);
+        SaveSystem.SaveInfo(info);
     }
 }

@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     public bool isPowerUpMagnet = false;
     public bool isPowerUpStrongLungs = false;
 
+    public bool isHostMode = false;
     public bool isObstacleOnScreen = false;
     private Player player;
     private bool isOxygenEmpty;
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //Application.targetFrameRate = 15;
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.musicGame);
         player = FindObjectOfType<Player>();
         pauseScreen.gameObject.SetActive(false);
         oxygenLevelBar.maxValue = 100;
@@ -117,11 +119,12 @@ public class GameManager : MonoBehaviour
         if(oxygenLevel <= 0)
         {
             isOxygenEmpty = true;
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.deathNoOxygen);
             GameOver();
         }
     }
 
-    public void GameOver()
+    public async void GameOver(string gameOverText = "")
     {
         gameSpeed = 0f;
         enabled = false;
@@ -135,7 +138,12 @@ public class GameManager : MonoBehaviour
         }
         SaveSystem.SaveInfo(userInfo);
 
-        StartCoroutine(GameOverScreen(2, userInfo.highScore, userInfo.coins));
+        if(isHostMode)
+        {
+            await FirestoreManager.Instance.AddToHistory(score);
+        }
+
+        StartCoroutine(GameOverScreen(2, userInfo.highScore, userInfo.coins, gameOverText));
 
         spawnerBG.gameObject.SetActive(false);
         spawnerCoins.Deactivate();
@@ -169,6 +177,7 @@ public class GameManager : MonoBehaviour
 
     public void PowerUp2xScore()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.collectBuff);
         isPowerUp2x = true;
         powerUpBarDuration.maxValue = DOUBLE_SCORE_DURATION;
         powerUpBarDuration.gameObject.SetActive(true);
@@ -178,6 +187,7 @@ public class GameManager : MonoBehaviour
     }
     public void PowerUpMagnet()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.collectBuff);
         isPowerUpMagnet = true;
         player.magnet.gameObject.SetActive(true);
         powerUpBarDuration.maxValue = MAGNET_DURATION;
@@ -188,6 +198,7 @@ public class GameManager : MonoBehaviour
     }
     public void PowerUpStrongLungs()
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.collectBuff);
         isPowerUpStrongLungs = true;
         powerUpBarDuration.maxValue = STRONG_LUNGS_DURATION;
         powerUpBarDuration.gameObject.SetActive(true);
@@ -195,20 +206,31 @@ public class GameManager : MonoBehaviour
         buffIcon.sprite = buffIcons[2];
         StartCoroutine(PowerUpStrongLungsDuration(STRONG_LUNGS_DURATION));
     }
-    private IEnumerator GameOverScreen(int delay, int highScore, int totalCoins)
+    private IEnumerator GameOverScreen(int delay, int highScore, int totalCoins, string gameOverText)
     {
         yield return new WaitForSeconds(delay);
         gameOverScreen.gameObject.SetActive(true);
+        if(isHostMode)
+        {
+            playAgainBtn.gameObject.SetActive(false);
+        }
 
         highScoreText.text = $"{highScore}";
         totalCoinsText.text = $"{totalCoins}";
-        if (isOxygenEmpty)
+        if(gameOverText == "")
         {
-            controlPanelText.text = "You ran out of oxygen!";
+            if (isOxygenEmpty)
+            {
+                controlPanelText.text = "You ran out of oxygen!";
+            }
+            else
+            {
+                controlPanelText.text = "You got struck!";
+            }
         }
         else
         {
-            controlPanelText.text = "You got struck!";
+            controlPanelText.text = gameOverText;
         }
     }
 

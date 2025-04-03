@@ -11,11 +11,12 @@ public class SignupScript : MonoBehaviour
 {
     [Space]
     [Header("Signup")]
-    public TMP_InputField email;
-    public TMP_InputField password;
-    public TMP_InputField repeatPassword;
-    public TMP_InputField username;
-
+    public TMP_InputField emailField;
+    public TMP_InputField passwordField;
+    public TMP_InputField repeatPasswordField;
+    public TMP_InputField usernameField;
+    public TextMeshProUGUI errorText;
+    public Button signupBtn;
     public FirebaseUser user;
     FirebaseFirestore db;
 
@@ -25,40 +26,59 @@ public class SignupScript : MonoBehaviour
         
     }
 
-    public void Signup()
+    public async void Signup()
     {
-        StartCoroutine(SignupAsync(email.text, username.text, password.text, repeatPassword.text));
-    }
+        signupBtn.interactable = false;
+        string email = emailField.text;
+        string username = usernameField.text;
+        string password = passwordField.text;
+        string repeatPassword = repeatPasswordField.text;
 
-    private IEnumerator SignupAsync(string email, string username, string password, string repeatPassword)
-    {
         if (email == "" || email == null)
         {
+            errorText.text = "No email";
             Debug.LogError("No email");
         }
         else if (username == "" || username == null)
         {
+            errorText.text = "No username";
             Debug.LogError("No username");
         }
         else if (password == "" || password == null)
         {
+            errorText.text = "No password";
             Debug.LogError("No password");
         }
         else if (password != repeatPassword)
         {
+            errorText.text = "Password doesn't match";
             Debug.LogError("Password doesn't match");
         }
         else
         {
-            var signupTask = AuthManager.Instance.auth.CreateUserWithEmailAndPasswordAsync(email, password);
-
-            yield return new WaitUntil(() => signupTask.IsCompleted);
-
-            if(signupTask.Exception != null)
+            try
             {
-                Debug.LogError(signupTask.Exception);
-                FirebaseException firebaseException = signupTask.Exception.GetBaseException() as FirebaseException;
-                AuthError authError = (AuthError)firebaseException.ErrorCode;
+                var signupTask = await AuthManager.Instance.auth.CreateUserWithEmailAndPasswordAsync(email, password);
+                Debug.Log("REGISTERING...");
+                string id = DateTime.UtcNow.ToString("yyMMddHHmmss");
+
+                DocumentReference usersDoc = FirestoreManager.Instance.firestore.Collection("users").Document(id);
+
+                Dictionary<string, object> userData = new Dictionary<string, object>
+                    {
+                        { "email", email },
+                        { "username", username },
+                        { "history", new List<object>() },
+                        { "role", "student" }
+                    };
+
+                await usersDoc.SetAsync(userData);
+                Debug.Log("Registration Successful");
+                //FirebaseAuth.DefaultInstance.SignOut();
+            }
+            catch (FirebaseException e) 
+            {
+                AuthError authError = (AuthError)e.ErrorCode;
 
                 string failedMessage = "Signup failed: ";
 
@@ -83,36 +103,10 @@ public class SignupScript : MonoBehaviour
                         failedMessage += "Unknown error, contact support";
                         break;
                 }
+                errorText.text = failedMessage;
                 Debug.LogError(failedMessage);
             }
-            else
-            {
-                Debug.Log("REGISTERING...");
-                string id = DateTime.UtcNow.ToString("yyMMddHHmmss");
-
-                DocumentReference usersDoc = FirestoreManager.Instance.firestore.Collection("users").Document(id);
-
-                Dictionary<string, object> userData = new Dictionary<string, object>
-                    {
-                        { "email", email },
-                        { "username", username },
-                        { "history", new List<object>() },
-                        { "role", "student" }
-                    };
-
-                var addUserTask = usersDoc.SetAsync(userData);
-
-                yield return new WaitUntil(() => addUserTask.IsCompleted);
-
-                if (addUserTask.Exception != null)
-                {
-                    Debug.LogError($"Failed to add user to Firestore: {addUserTask.Exception}");
-                }
-                else
-                {
-                    Debug.Log("Registration Successful");
-                }
-            }
         }
+        signupBtn.interactable = true;
     }
 }

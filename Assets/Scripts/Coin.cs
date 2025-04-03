@@ -15,7 +15,6 @@ public class Coin : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player");
     }
-
     private void Update()
     {
         if (transform.position.x < leftEdge)
@@ -34,6 +33,7 @@ public class Coin : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.collectCoin);
             GameManager.Instance.coinCount++;
             Destroy(gameObject);
         }
